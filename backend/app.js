@@ -2,12 +2,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
-const postsRoutes = require("./models/routes/posts");
+const postsRoutes = require("./routes/posts");
 
 const app = express();
 
-mongoose.connect(
-  "mongodb+srv://Akash:Akash131@cluster0-hlotd.mongodb.net/node-angular?retryWrites=true")
+//mongoose.connect(
+  //"mongodb+srv://Akash:Akash131@cluster0-hlotd.mongodb.net/node-angular?retryWrites=true")
+
+mongoose.connect("mongodb://localhost:27017/node-angular", { useNewUrlParser: true })
+
   .then(() => {
     console.log("Connected to database")
 
